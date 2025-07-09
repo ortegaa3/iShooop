@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda iShop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      background-color: #222;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background-color: #444;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: white;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    #inicio {
+      text-align: center;
+    }
+
+    #inicio img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    #productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .producto {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+      margin: 15px;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .producto img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 40px auto 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    form h3 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    form label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    form button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      background-color: #25d366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #1ebe5d;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#pedido">Realizar pedido</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="inicio">
+    <img src="logo.svg" alt="Logo iShop Accesorios" />
+    <h1>Bienvenido a iShop Accesorios para iPhone</h1>
+    <p>Los mejores accesorios para tu iPhone calidad premium a excelentes precios</p>
+  </section>
+
+  <section id="productos">
+    <div class="producto">
+      <img src="data:image/webp;base64,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" alt="Funda para iPhone" />
+      <h2>Funda MagSafe Case</h2>
+      <p>$100 MXN</p>
+    </div>
+
+    <section id="productos">
+        <div class="producto">
+          <img src="https://th.bing.com/th?id=OIF.Uy1zXSw3p1HRFpvCmB0%2ftQ&w=223&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Apple watch" />
+          <h2>Apple watch SERIES 10</h2>
+          <p>$900 MXN</p>
+        </div>
+
+        <section id="productos">
+            <div class="producto">
+              <img src="data:image/webp;base64,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" alt="Bateria MagSafe" />
+              <h2>Bateria MagSafe</h2>
+              <p>$500 MXN</p>
+            </div>
+
+    <div class="producto">
+      <img src="data:image/webp;base64,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" alt="Cargador rápido" />
+      <h2>Cargador lightning tipo C</h2>
+      <p>$160 MXN</p>
+    </div>
+
+    <div class="producto">
+      <img src="https://th.bing.com/th/id/OIP.HXIIKEizwVJ3lrfxwu1XsQHaEK?w=269&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="airpods" />
+      <h2>airpods pro 2da generacion</h2>
+      <p>$450 MXN</p>
+    </div>
+
+    <div class="producto">
+        <img src="https://th.bing.com/th/id/OIP.DL8AkkI3prYY87HiGnHfKgHaHK?w=181&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="airpods" />
+        <h2>airpods 3ra Generacion </h2>
+        <p>$400 MXN</p>
+      </div>
+
+  </section>
+
+  <section id="pedido">
+    <form id="formulario">
+      <h3>Realizar pedido</h3>
+
+      <label for="producto">Producto:</label>
+      <select id="producto" required>
+        <option value="">-- Selecciona un producto --</option>
+        <option value="Funda MagSafe Case- $100">Funda MagSafe Case - $100 MXN</option>
+        <option value="Cargador lightning tipo C- $160">Cargador lightning tipo C - $160 MXN</option>
+        <option value="Apple watch SERIES 10 - $900">Apple watch SERIES 10 - $900 MXN</option>
+        <option value="airpods pro 2da generacion - $450">airpods pro 2da generacion - $450 MXN</option>
+        <option value="airpods 3ra Generacion  - $400">airpods 3ra Generacion  - $400 MXN</option>
+        <option value="Bateria MagSafe - $500">Bateria MagSafe- $500 MXN</option>
+      </select>
+
+      <label for="text">nombre de producto:</label>
+      <input type="text" id="producto" required />
+
+      <label for="nombre">Tu nombre:</label>
+      <input type="text" id="nombre" required />
+
+      <label for="direccion">Dirección de envío:</label>
+      <input type="text" id="direccion" required />
+
+      <label for="telefono">Teléfono de contacto:</label>
+      <input type="tel" id="telefono" required />
+
+      <button  onclick="enviarPedido()">Enviar pedido por WhatsApp</button>
+      function enviarPedido() {
+        alert("Pedido enviado correctamente");
+      }
+    </form>
+  </section>
+
+  <section id="contacto" style="text-align:center; padding: 40px 20px;">
+    <h3>Contacto</h3>
+    <p>¿Dudas? Escríbenos por WhatsApp o correo electrónico.</p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/5218147900212" target="_blank">521 8147 9002 12</a></p>
+    <p><strong>Email:</strong> ------</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Tienda iPhone. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+   
+function enviarPedido() {
+  const producto = document.getElementById("producto").value;
+  const nombre = document.getElementById("nombre").value;
+  const direccion = document.getElementById("direccion").value;
+  const telefono = document.getElementById("telefono").value;
+
+  const mensaje = `Hola, quiero hacer un pedido:\n
+Producto: ${producto}\n
+Nombre: ${nombre}\n
+Dirección: ${direccion}\n
+Teléfono: ${telefono}`;
+
+  const numeroWhatsApp = "5218147900212"; // ✅ Cambia este número al tuyo sin espacios
+  const url = https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)};
+
+  window.open(url, "_blank");
+}
+</script>
+  </script>
+</body>
+</html>
